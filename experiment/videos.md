@@ -4,4 +4,4 @@
 
 **Lagu paTa**:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ySn0PQEIvYg"  allowfullscreen></iframe>
+<iframe width="922" height="500" src="https://www.youtube.com/embed/g44iq0VzJm4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

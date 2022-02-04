@@ -22,8 +22,3 @@ Differentiating the earlier equations from velocity analysis, we end up with the
 </div>
 
 </div>
-
-**RELEVANT INDIAN STANDARD FOR IZOD IMPACT TEST**:
-
-1. IS 1598:1977-Method for Izod impact test of metals
-2. IS:3766-1977- Method for calibration of pendulum impact testing machines for testing metals
