@@ -1,1 +1,1 @@
-## Experiment name
+## Acceleration analysis of Slider crank mechanism

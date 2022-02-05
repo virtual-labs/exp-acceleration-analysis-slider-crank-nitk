@@ -1,1 +1,1 @@
-### Aim of the experiment
+To observe and calculate acceleration of various parts of the slider crank mechanism based on different input link lengths and angular velocity.
