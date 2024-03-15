@@ -287,6 +287,9 @@ em:current font size
   .title-div-container {
     padding: 0.5rem 0.5rem 0.05rem 0.5rem;
   }
+  .logo-div {
+    width: 5rem;
+  }
   .title-div h1 {
     padding: 0.2rem;
 
