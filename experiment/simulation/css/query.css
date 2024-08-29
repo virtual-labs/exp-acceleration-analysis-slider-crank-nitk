@@ -10,24 +10,24 @@ em:current font size
 /* **************************** */
 
 @media (min-width: 1200px) {
-  #datatable2 {
+  /* #datatable2 {
     position: relative;
     margin-top: 405px;
     margin-left: 50px;
-  }
-  #legendicon {
+  } */
+  /* #legendicon {
     background-image: url("../images/legendicon.png");
     position: absolute;
     left: 500px;
     top: 580px;
-  }
-  #legend {
+  } */
+  /* #legend {
     position: absolute;
     left: 400px;
     top: 520px;
-  }
-  #variables {
-    width: 200%;
+  } */
+  #variables{
+    width: 201%;
   }
 }
 
@@ -67,15 +67,15 @@ em:current font size
     width: 3rem;
     height: 2.8rem;
   }
-  #variables {
-    width: 200%;
+  #variables{
+    width: 201%;
   }
 
-  #datatable2 {
+  /* #datatable2 {
     position: relative;
     margin-top: 405px;
     margin-left: 10px;
-  }
+  } */
 }
 
 /* **************************** */
@@ -83,6 +83,12 @@ em:current font size
 /* **************************** */
 
 @media (max-width: 59em) {
+  /* canvas#simscreen {
+    width: 80%;
+    height: 51%;
+    left: 0;
+    top: 0;
+  } */
   .tool-link:link,
   .tool-link:visited {
     gap: 0.5rem;
@@ -141,10 +147,13 @@ em:current font size
     /* background-color: red; */
   }
   .main-section {
-    grid-template-columns: 1fr;
+    /* grid-template-columns: 1fr; */
   }
   .canvas__div {
-    grid-template-columns: 1fr;
+    /* grid-template-columns: 1fr; */
+  }
+  .main__task-div:nth-child(4) {
+    margin-bottom: 6rem;
   }
   .canvas {
     display: block;
@@ -153,13 +162,13 @@ em:current font size
     border: none;
     border-top: 1px solid rgba(177, 176, 176, 0.855);
   }
-  #datatable2 {
+  /* #datatable2 {
     position: relative;
     margin-top: -160px;
     margin-left: 455px;
-  }
-  #variables {
-    width: auto;
+  } */
+  #variables{
+    width: 100%;
   }
 }
 
@@ -168,10 +177,10 @@ em:current font size
 /* **************************** */
 @media (max-width: 48em) {
   .main-section {
-    grid-template-columns: 1fr;
+    /* grid-template-columns: 1fr; */
   }
   .canvas__div {
-    grid-template-columns: 1fr;
+    /* grid-template-columns: 1fr; */
   }
 
   .canvas {
@@ -181,16 +190,16 @@ em:current font size
     border: none;
     border-top: 1px solid rgba(177, 176, 176, 0.855);
   }
-  #variables {
-    width: auto;
-  }
-
+  /* #variables {
+    width: 200%;
+  } */
+/* 
   #datatable2 {
     position: relative;
     margin-top: -160px;
     margin-left: 430px;
-  }
-  canvas#simscreen {
+  } */
+  /* canvas#simscreen {
     position: absolute;
     left: 17px;
     top: 86px;
@@ -199,7 +208,7 @@ em:current font size
     margin-left: -34px;
     margin-right: 50px;
     margin-top: 15px;
-  }
+  } */
 }
 
 /* **************************** */
@@ -207,7 +216,7 @@ em:current font size
 /* **************************** */
 @media (max-width: 44em) {
   .canvas__div {
-    grid-template-columns: 1fr;
+    /* grid-template-columns: 1fr; */
   }
 
   .img-div {
@@ -241,28 +250,28 @@ em:current font size
     border: none;
     border-top: 1px solid rgba(177, 176, 176, 0.855);
   }
-  #variables {
-    width: auto;
+  #variables{
+    width: 100%;
   }
 
-  #datatable2 {
+  /* #datatable2 {
     position: relative;
     margin-top: -160px;
     margin-left: 400px;
     font-size: 13px;
-  }
-  #legendicon {
+  } */
+  /* #legendicon {
     background-image: url("../images/legendicon.png");
     position: absolute;
     left: 500px;
     top: 580px;
-  }
-  #legend {
+  } */
+  /* #legend {
     position: absolute;
     left: 400px;
     top: 520px;
-  }
-  canvas#simscreen {
+  } */
+  /* canvas#simscreen {
     position: absolute;
     left: 17px;
     top: 86px;
@@ -271,7 +280,7 @@ em:current font size
     margin-left: -34px;
     margin-right: 50px;
     margin-top: 15px;
-  }
+  } */
 }
 
 /* **************************** */
@@ -279,16 +288,17 @@ em:current font size
 /* **************************** */
 @media (max-width: 34em) {
   .container {
-    padding: 0.5rem;
     gap: 1rem;
-    width: 100%;
-    height: 40%;
+  }
+  #canvas-container {
+    grid-column: 1/-1;
+    height: 458px;
   }
   .title-div-container {
     padding: 0.5rem 0.5rem 0.05rem 0.5rem;
   }
   .title-div h1 {
-    padding: 0.2rem;
+    /* padding: 0.2rem; */
 
     font-size: 1.6rem;
     /* text-align: center; */
@@ -329,9 +339,25 @@ em:current font size
     border-top: 1px solid rgba(177, 176, 176, 0.855);
     /* background-color: red; */
   }
+  .canvas__div {
+    grid-template-columns: 1fr;
+  }
   .div__control img {
     width: 2.7rem;
     height: 2.5rem;
+  }
+  .datatable {
+    grid-row: 3/4;
+    grid-column: 1/-1;
+    padding: 0.5rem;
+  }
+  .comments {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+  #titleincanvas {
+    grid-row: 1/-1;
+    grid-column: 1/-1;
   }
 
   .tooltip {
@@ -345,14 +371,14 @@ em:current font size
   .footer {
     margin-bottom: 7rem;
   }
-  #datatable2 {
+  /* #datatable2 {
     position: relative;
     margin-top: -215px;
     margin-left: 225px;
     font-size: 11px;
-  }
+  } */
 
-  #legendicon {
+  /* #legendicon {
     background-image: url("../images/legendicon.png");
     position: absolute;
     left: 250px;
@@ -362,8 +388,8 @@ em:current font size
     position: absolute;
     left: 150px;
     top: 490px;
-  }
-  canvas#simscreen {
+  } */
+  /* canvas#simscreen {
     position: absolute;
     left: 35px;
     top: 22px;
@@ -371,10 +397,11 @@ em:current font size
     width: 290px;
     margin-left: -34px;
     margin-top: 15px;
+  } */
+  #variables{
+    width: 100%;
   }
-  #variables {
-    width: auto;
-  }
+  
 }
 
 /* 

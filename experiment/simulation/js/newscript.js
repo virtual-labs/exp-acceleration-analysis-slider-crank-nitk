@@ -86,13 +86,13 @@ function editcss() {
   // $("#datatable1").css("left", "100px");
   // $("#datatable1").css("top", "250px");
 
-  $("#datatable2").css("left", "480px");
-  $("#datatable2").css("top", "430px");
-  $("#datatable2").css("border", "0");
-  $("#datatable2").css("border", "70px");
-  $("#datatable2").css("font-size", "13px");
-  $("#datatable2").css("font-family", "'Comic Sans MS'");
-  $("#datatable2").css("color", "#CD3401");
+  // $("#datatable2").css("left", "480px");
+  // $("#datatable2").css("top", "430px");
+  // $("#datatable2").css("border", "0");
+  // $("#datatable2").css("border", "70px");
+  // $("#datatable2").css("font-size", "13px");
+  // $("#datatable2").css("font-family", "'Comic Sans MS'");
+  // $("#datatable2").css("color", "#CD3401");
   $("#commentboxright").css("font-size", "14px");
 }
 
@@ -167,22 +167,34 @@ function showEquations()
 }*/
 
 //Displaying Legend
-function showLegend() {
-  if (legendCS) {
-    $("#legendicon").css("border", "double");
-    $("#legend").css("height", "0px");
-    $("#legend").css("border", "0px");
-    legendCS = false;
+// function showLegend() {
+//   if (legendCS) {
+//     $("#legendicon").css("border", "double");
+//     $("#legend").css("height", "0px");
+//     $("#legend").css("border", "0px");
+//     legendCS = false;
+//   } else {
+//     $("#legendicon").css("border", "inset red");
+//     $("#legend").css(
+//       "height",
+//       document.getElementById("legendimg").height + "px"
+//     );
+//     $("#legend").css("border", "solid 1px");
+//     legendCS = true;
+//   }
+// }
+const divContainer = document.querySelector("#elementToworkon");
+let isClicked = true;
+
+let showLegend = function () {
+  if (isClicked) {
+    divContainer.style.display = "block";
+    isClicked = false;
   } else {
-    $("#legendicon").css("border", "inset red");
-    $("#legend").css(
-      "height",
-      document.getElementById("legendimg").height + "px"
-    );
-    $("#legend").css("border", "solid 1px");
-    legendCS = true;
+    divContainer.style.display = "none";
+    isClicked = true;
   }
-}
+};
 
 //Initialise system parameters here
 function varinit() {
@@ -226,15 +238,18 @@ $( "#r1spinner" ).on( "change", function() {  varchange() } );
   // setting trace point coordinate arrays to empty on change of link length
   $("#r2slider").on("slide", function (e, ui) {
     $("#r2spinner").spinner("value", ui.value);
+    updateR3Limits(ui.value, false);
     ptx = [];
     pty = [];
   });
   $("#r2spinner").on("spin", function (e, ui) {
     $("#r2slider").slider("value", ui.value);
+    updateR3Limits(ui.value, false);
     ptx = [];
     pty = [];
   });
   $("#r2spinner").on("change", function () {
+    updateR3Limits($("#r2spinner").spinner("value"), false);
     varchange();
   });
 
@@ -305,6 +320,36 @@ $( "#r4spinner" ).on( "change", function() {  varchange() } );
   });
 
   varupdate();
+}
+
+
+
+function updateR3Limits(r2Value, updateSlider) {
+  const maxR3 = 6 * r2Value;
+  const minR3 = 2.5 * r2Value;
+
+  $('#r3slider').slider("option", "max", maxR3);
+  $('#r3slider').slider("option", "min", minR3);
+  $('#r3spinner').spinner("option", "max", maxR3);
+  $('#r3spinner').spinner("option", "min", minR3);
+
+  const r3Value = $('#r3spinner').spinner("value");
+  if (r3Value < minR3) {
+    $('#r3spinner').spinner("value", minR3);
+    if (updateSlider) {
+      $('#r3slider').slider("value", minR3);
+    }
+  } else if (r3Value > maxR3) {
+    $('#r3spinner').spinner("value", maxR3);
+    if (updateSlider) {
+      $('#r3slider').slider("value", maxR3);
+    }
+  } else {
+    $('#r3spinner').spinner("value", r3Value);
+    if (updateSlider) {
+      $('#r3slider').slider("value", r3Value);
+    }
+  }
 }
 
 //Computing of various system parameters
@@ -510,7 +555,7 @@ function draw() {
   ctx.save();
   ctx.translate(0.75, 0.75);
   ctx.font = "12px 'Comic Sans MS'";
-
+  document.getElementById('titleincanvas').innerHTML="Non Grash of Mechanism";
   if (scaleP >= 1) ctx.fillText("Scale = 1:" + scaleP, 15, 30);
   if (scaleP < 1) ctx.fillText("Scale = " + 1 / scaleP + ":1", 15, 30);
 
@@ -727,13 +772,13 @@ function drawacc(context) {
     "rad/s<sup>2</sup></td></tr>\
 </table>";
 
-  document.getElementById("datatable2").innerHTML =
-    "\
-<table>\
-<tr><td>Centripetal Acc</td></tr>\
-<tr><td>Tangential Acc</td></tr>\
-<tr><td>Total Acc</td></tr>\
-</table>";
+//   document.getElementById("datatable2").innerHTML =
+//     "\
+// <table>\
+// <tr><td>Centripetal Acc</td></tr>\
+// <tr><td>Tangential Acc</td></tr>\
+// <tr><td>Total Acc</td></tr>\
+// </table>";
 
   //Acceleration Diagram
   ao = pointtrans(ao, transA);
@@ -789,8 +834,19 @@ function drawacc(context) {
   context.moveTo(380, 348);
   context.lineTo(430, 348);
   context.stroke();
+  context.lineWidth = 1;
+  context.font = "16px 'Comic Sans MS'";
+  context.fillStyle = "#000000";
+  context.fillText("Total Acc", 430, 395);
   pointjoin(aa, acba, context, "#330099", 1);
-
+  
+  context.save();
+  context.translate(0.5, 0.5);
+  context.lineWidth = 1;
+  context.font = "16px 'Comic Sans MS'";
+  context.fillStyle = "#000000";
+  context.fillText("Centripetal Acc", 430, 350);
+  context.restore();
   context.closePath();
   context.beginPath();
   context.strokeStyle = "#330099";
@@ -799,6 +855,13 @@ function drawacc(context) {
   context.lineTo(430, 368);
   context.stroke();
   pointjoin(acba, atba, context, "#330099", 1);
+  context.save();
+  context.translate(0.5, 0.5);
+  context.lineWidth = 1;
+  context.font = "16px 'Comic Sans MS'";
+  context.fillStyle = "#000000";
+  context.fillText("Tangential Acc", 430, 370);
+  context.restore();
   context.closePath();
   context.restore();
 }
