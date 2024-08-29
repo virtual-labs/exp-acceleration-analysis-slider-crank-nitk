@@ -19,6 +19,7 @@
 html {
   font-size: 62.5%;
   font-family: "Nunito", sans-serif;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -61,8 +62,9 @@ h3 {
 
 /*majorly modified here*/
 .ui-spinner {
-  width: 10rem;
+  width: 12rem;
   text-align: center;
+  margin-left: -1rem;
   display: inline-block;
   overflow: hidden;
   padding: 0;
