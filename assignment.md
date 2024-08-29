@@ -1,0 +1,1 @@
+1. What is the acceleration v/s time graph of the slider in slider crank mechanism?
