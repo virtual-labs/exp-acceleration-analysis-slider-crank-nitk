@@ -167,34 +167,22 @@ function showEquations()
 }*/
 
 //Displaying Legend
-// function showLegend() {
-//   if (legendCS) {
-//     $("#legendicon").css("border", "double");
-//     $("#legend").css("height", "0px");
-//     $("#legend").css("border", "0px");
-//     legendCS = false;
-//   } else {
-//     $("#legendicon").css("border", "inset red");
-//     $("#legend").css(
-//       "height",
-//       document.getElementById("legendimg").height + "px"
-//     );
-//     $("#legend").css("border", "solid 1px");
-//     legendCS = true;
-//   }
-// }
-const divContainer = document.querySelector("#elementToworkon");
-let isClicked = true;
-
-let showLegend = function () {
-  if (isClicked) {
-    divContainer.style.display = "block";
-    isClicked = false;
+function showLegend() {
+  if (legendCS) {
+    $("#legendicon").css("border", "double");
+    $("#legend").css("height", "0px");
+    $("#legend").css("border", "0px");
+    legendCS = false;
   } else {
-    divContainer.style.display = "none";
-    isClicked = true;
+    $("#legendicon").css("border", "inset red");
+    $("#legend").css(
+      "height",
+      document.getElementById("legendimg").height + "px"
+    );
+    $("#legend").css("border", "solid 1px");
+    legendCS = true;
   }
-};
+}
 
 //Initialise system parameters here
 function varinit() {
@@ -507,7 +495,7 @@ function varupdate() {
 function draw() {
   canvas = document.getElementById("simscreen");
   ctx = canvas.getContext("2d");
-  ctx.clearRect(0, 0, 550, 400); //clears the complete canvas#simscreen everytime
+  ctx.clearRect(0, 0, 550, 350); //clears the complete canvas#simscreen everytime
 
   pointtrans(o, trans);
   pointtrans(a, trans);
@@ -554,7 +542,7 @@ function draw() {
   //displaying scale values
   ctx.save();
   ctx.translate(0.75, 0.75);
-  ctx.font = "12px 'Comic Sans MS'";
+  ctx.font = " 16px 'Comic Sans MS'";
   document.getElementById('titleincanvas').innerHTML="Non Grash of Mechanism";
   if (scaleP >= 1) ctx.fillText("Scale = 1:" + scaleP, 15, 30);
   if (scaleP < 1) ctx.fillText("Scale = " + 1 / scaleP + ":1", 15, 30);
@@ -702,14 +690,14 @@ function drawrem(context) {
   context.save();
   context.translate(0.5, 0.5);
   context.lineWidth = 1;
-  context.font = "14px 'Comic Sans MS'";
+  context.font = " bold 14px 'Comic Sans MS'";
   context.fillStyle = "#000000";
   context.fillText("Position Diagram", 15, 15);
   context.restore();
   context.save();
   context.translate(0.5, 0.5);
   context.lineWidth = 1;
-  context.font = "14px 'Comic Sans MS'";
+  context.font = " bold 14px 'Comic Sans MS'";
   context.fillStyle = "#000000";
   context.fillText("Velocity Diagram", 315, 15);
   context.restore();
@@ -801,10 +789,10 @@ function drawacc(context) {
     "#000000"
   );
 
-  pointjoin(aa, aba, context, "#330099", 2);
-  context.moveTo(380, 390);
-  context.lineTo(430, 390);
-  context.stroke();
+  // pointjoin(aa, aba, context, "#330099", 2);
+  // context.moveTo(380, 390);
+  // context.lineTo(430, 390);
+  // context.stroke();
   drawArrow(
     aba.xcoord,
     aba.ycoord,
@@ -829,15 +817,15 @@ function drawacc(context) {
   context.save();
 
   context.beginPath();
-  context.strokeStyle = "#330099";
-  context.setLineDash([5, 5]);
-  context.moveTo(380, 348);
-  context.lineTo(430, 348);
-  context.stroke();
-  context.lineWidth = 1;
+  // context.strokeStyle = "#330099";
+  // // context.setLineDash([5, 5]);
+  // context.moveTo(380, 348);
+  // context.lineTo(430, 348);
+  // context.stroke();
+  context.lineWidth = 0;
   context.font = "16px 'Comic Sans MS'";
   context.fillStyle = "#000000";
-  context.fillText("Total Acc", 430, 395);
+  // context.fillText("Total Acc", 430, 395);
   pointjoin(aa, acba, context, "#330099", 1);
   
   context.save();
@@ -845,22 +833,22 @@ function drawacc(context) {
   context.lineWidth = 1;
   context.font = "16px 'Comic Sans MS'";
   context.fillStyle = "#000000";
-  context.fillText("Centripetal Acc", 430, 350);
+  // context.fillText("Centripetal Acc", 430, 350);
   context.restore();
   context.closePath();
   context.beginPath();
   context.strokeStyle = "#330099";
-  context.setLineDash([10, 10]);
-  context.moveTo(380, 368);
-  context.lineTo(430, 368);
-  context.stroke();
+  // context.setLineDash([10, 10]);
+  // context.moveTo(380, 368);
+  // context.lineTo(430, 368);
+  // context.stroke();
   pointjoin(acba, atba, context, "#330099", 1);
   context.save();
   context.translate(0.5, 0.5);
   context.lineWidth = 1;
   context.font = "16px 'Comic Sans MS'";
   context.fillStyle = "#000000";
-  context.fillText("Tangential Acc", 430, 370);
+  // context.fillText("Tangential Acc", 430, 370);
   context.restore();
   context.closePath();
   context.restore();
