@@ -100,7 +100,6 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  cursor: pointer;
 }
 .tool-list span {
   display: inline-block;
@@ -382,7 +381,7 @@ h1 {
 }
 .datatable {
   grid-row: 3/3;
-  grid-column: 1/3;
+  grid-column: 0/3;
   justify-self: center;
   align-self: center;
 }
@@ -434,7 +433,7 @@ td:nth-child(2) {
   width: 600px;
 } */
 canvas#simscreen {
-  width: 100%;
+  width: 80%;
   height: 81%;
   left: 0;
   top: 0;
@@ -442,26 +441,25 @@ canvas#simscreen {
 #legendicon {
   background-image: url("../images/legendicon.png");
   /* position: absolute; */
-  left: 32px;
-  /* top: 580px; */
+  /* left: 32px; */
+  top: 580px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 24px;
   width: 24px;
   border: double;
 }
 #legend {
-  /* position: absolute; */
+  position: absolute;
   left: 62px;
-  top: 500px;
+  top: 786px;
   height: 0px;
   width: 100px;
   border: solid 0px;
   z-index: 100;
   overflow: hidden;
 }
-#elementToworkon {
-  display: none;
-}
-
 .comments {
   display: grid;
   grid-template-columns: 1fr 1fr;
