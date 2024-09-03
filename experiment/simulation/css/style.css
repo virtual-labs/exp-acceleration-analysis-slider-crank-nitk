@@ -139,12 +139,11 @@ h1 {
 
 .main-section {
   display: grid;
-  /* grid-template-columns: repeat(2, 1fr); */
   grid-template-columns: 50fr 50fr;
   gap: 0.5rem;
-  overflow-y: hidden;
-  overflow-x: hidden;
+  overflow-y: auto;
   scroll-behavior: smooth;
+  padding: 0 0.5rem 0 0;
 
   /* padding: 0 1rem 0 0; */
 }
@@ -169,7 +168,7 @@ h1 {
   grid-column: 1/-1;
   /* grid-row: 1/4; */
 }
-
+/* 
 .title-control-div {
   display: flex;
   justify-content: space-between;
@@ -177,7 +176,7 @@ h1 {
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
   background-color: var(--clr-title-background);
-}
+} */
 
 .footer {
   font-size: 1.2rem;
@@ -224,21 +223,30 @@ h1 {
   background-color: #fff;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
   gap: 0;
-  flex-wrap: wrap;
-  flex-direction: row;
   height: auto;
   border-bottom-right-radius: 1rem;
   border-bottom-left-radius: 1rem;
 }
 #canvas-container {
+  grid-column: 1/-1;
   width: 100%;
-  height: auto;
+  display: block;
+  height: 100%;
+  align-self: center;
+  display: flex;
+  justify-content: center;
 }
 #canvas {
   border-left: 1px solid rgba(177, 176, 176, 0.855);
   width: 100%;
   height: 100%;
+}
+.comments_sec {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
 .img-div {
   display: flex;
@@ -298,7 +306,10 @@ h1 {
   width: 100%;
   height: 100%;
 }
-
+.unit {
+  margin-left: -2.5rem;
+  margin-top: -4rem;
+}
 #graphscreen1,
 #graphscreen2 {
   border-top: 1px solid var(--clr-title-background);
@@ -319,16 +330,14 @@ h1 {
 
 .variables-sections,
 .control-sections {
-  padding: 1rem 1rem 2rem 1rem;
-  /* border: 1px solid var(--clr-title-background);
-  border-bottom-left-radius: 1rem;
-  border-bottom-right-radius: 1rem; */
+  padding: 2rem 1rem 2rem 3.5rem;
 
   display: flex;
   flex-direction: column;
-  align-items: center;
   row-gap: 1rem;
-}
+  align-items: center; 
+} 
+
 
 .var-div {
   display: flex;
@@ -371,13 +380,31 @@ h1 {
   height: 100%;
 }
 .datatable {
-  width: 140px;
-  font-size: 11px;
-  text-align: center;
-  margin-top: 355px;
-  padding-left: 2rem;
+  grid-row: 3/3;
+  grid-column: 0/3;
+  justify-self: center;
+  align-self: center;
 }
-.datatable table {
+table,
+td,
+tr,
+th {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 0.5rem;
+  font-weight: 600;
+}
+
+th:nth-child(2),
+td:nth-child(2) {
+  width: max-content;
+  /* padding: 0.5rem; */
+}
+
+td:nth-child(2) {
+  width: 8rem;
+}
+/* .datatable table {
   border: 1px solid #000011;
   border-collapse: collapse;
   width: 120px;
@@ -396,41 +423,58 @@ h1 {
   position: relative;
   font-size: 12px;
   left: -10px;
-}
+} */
 
-canvas#simscreen2 {
+/* canvas#simscreen2 {
   position: absolute;
   left: 30px;
   top: 250px;
   height: 400px;
   width: 600px;
-}
+} */
 canvas#simscreen {
-  position: absolute;
-  left: 17px;
-  top: 86px;
-  height: 414px;
-  width: 575px;
-  margin-left: -10px;
-  margin-right: 50px;
-  margin-top: 15px;
+  width: 80%;
+  height: 81%;
+  left: 0;
+  top: 0;
 }
 #legendicon {
   background-image: url("../images/legendicon.png");
-  position: absolute;
-  left: 650px;
+  /* position: absolute; */
+  /* left: 32px; */
   top: 580px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 24px;
   width: 24px;
   border: double;
 }
 #legend {
   position: absolute;
-  left: 550px;
-  top: 500px;
+  left: 62px;
+  top: 786px;
   height: 0px;
   width: 100px;
   border: solid 0px;
   z-index: 100;
   overflow: hidden;
+}
+.comments {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column: 1/-1;
+  align-items: center;
+  justify-content: space-around;
+  border-top: 1px dotted black;
+}
+
+#commentboxleft,
+#commentboxright {
+  justify-self: center;
+}
+#titleincanvas {
+  grid-column: 1/-1;
+  justify-self: center;
+  padding: 0.5rem;
 }
