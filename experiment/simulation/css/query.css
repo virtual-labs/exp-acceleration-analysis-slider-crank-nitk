@@ -9,25 +9,10 @@ em:current font size
 /* Below 1344px (Smaller Desktops) */
 /* **************************** */
 
-@media (min-width: 1200px) {
-  /* #datatable2 {
-    position: relative;
-    margin-top: 405px;
-    margin-left: 50px;
-  } */
-  /* #legendicon {
-    background-image: url("../images/legendicon.png");
-    position: absolute;
-    left: 500px;
-    top: 580px;
-  } */
-  /* #legend {
-    position: absolute;
-    left: 400px;
-    top: 520px;
-  } */
-  #variables{
-    width: 201%;
+@media (min-width: 1344px) {
+  body {
+    max-width: 120rem;
+    margin: 0 auto;
   }
 }
 
@@ -36,10 +21,6 @@ em:current font size
 /* **************************** */
 
 @media (max-width: 75em) {
-  body {
-    width: 100%;
-    margin: unset;
-  }
   .title-div h1 {
     font-size: 2.5rem;
   }
@@ -67,15 +48,9 @@ em:current font size
     width: 3rem;
     height: 2.8rem;
   }
-  #variables{
+  #variables {
     width: 201%;
   }
-
-  /* #datatable2 {
-    position: relative;
-    margin-top: 405px;
-    margin-left: 10px;
-  } */
 }
 
 /* **************************** */
@@ -83,12 +58,10 @@ em:current font size
 /* **************************** */
 
 @media (max-width: 59em) {
-  /* canvas#simscreen {
-    width: 80%;
-    height: 51%;
-    left: 0;
-    top: 0;
-  } */
+  body {
+    margin: 0;
+    width: 100%;
+  }
   .tool-link:link,
   .tool-link:visited {
     gap: 0.5rem;
@@ -116,6 +89,10 @@ em:current font size
     justify-content: space-evenly;
     border-radius: 0;
     scroll-behavior: auto;
+    margin: 0;
+  }
+  .main {
+    grid-column: 1/-1;
   }
   .tool-menu {
     list-style: none;
@@ -138,7 +115,7 @@ em:current font size
     height: 3rem;
   }
   .main__task-div:nth-child(4) {
-    margin-bottom: 6rem;
+    /* margin-bottom: 6rem; */
   }
   .canvas {
     display: block;
@@ -153,7 +130,7 @@ em:current font size
     /* grid-template-columns: 1fr; */
   }
   .main__task-div:nth-child(4) {
-    margin-bottom: 6rem;
+    /* margin-bottom: 6rem; */
   }
   .canvas {
     display: block;
@@ -161,14 +138,6 @@ em:current font size
     height: 100%;
     border: none;
     border-top: 1px solid rgba(177, 176, 176, 0.855);
-  }
-  /* #datatable2 {
-    position: relative;
-    margin-top: -160px;
-    margin-left: 455px;
-  } */
-  #variables{
-    width: 100%;
   }
 }
 
@@ -176,13 +145,6 @@ em:current font size
 /* Below 820px (Smaller Tablets) */
 /* **************************** */
 @media (max-width: 48em) {
-  .main-section {
-    /* grid-template-columns: 1fr; */
-  }
-  .canvas__div {
-    /* grid-template-columns: 1fr; */
-  }
-
   .canvas {
     display: block;
     width: 100%;
@@ -190,25 +152,6 @@ em:current font size
     border: none;
     border-top: 1px solid rgba(177, 176, 176, 0.855);
   }
-  /* #variables {
-    width: 200%;
-  } */
-/* 
-  #datatable2 {
-    position: relative;
-    margin-top: -160px;
-    margin-left: 430px;
-  } */
-  /* canvas#simscreen {
-    position: absolute;
-    left: 17px;
-    top: 86px;
-    height: 414px;
-    width: 575px;
-    margin-left: -34px;
-    margin-right: 50px;
-    margin-top: 15px;
-  } */
 }
 
 /* **************************** */
@@ -250,37 +193,9 @@ em:current font size
     border: none;
     border-top: 1px solid rgba(177, 176, 176, 0.855);
   }
-  #variables{
+  #variables {
     width: 100%;
   }
-
-  /* #datatable2 {
-    position: relative;
-    margin-top: -160px;
-    margin-left: 400px;
-    font-size: 13px;
-  } */
-  /* #legendicon {
-    background-image: url("../images/legendicon.png");
-    position: absolute;
-    left: 500px;
-    top: 580px;
-  } */
-  /* #legend {
-    position: absolute;
-    left: 400px;
-    top: 520px;
-  } */
-  /* canvas#simscreen {
-    position: absolute;
-    left: 17px;
-    top: 86px;
-    height: 414px;
-    width: 535px;
-    margin-left: -34px;
-    margin-right: 50px;
-    margin-top: 15px;
-  } */
 }
 
 /* **************************** */
@@ -288,7 +203,8 @@ em:current font size
 /* **************************** */
 @media (max-width: 34em) {
   .container {
-    gap: 1rem;
+    /* padding: 0.5rem; */
+    gap: 0.25rem;
   }
   #canvas-container {
     grid-column: 1/-1;
@@ -398,10 +314,9 @@ em:current font size
     margin-left: -34px;
     margin-top: 15px;
   } */
-  #variables{
+  #variables {
     width: 100%;
   }
-  
 }
 
 /* 
