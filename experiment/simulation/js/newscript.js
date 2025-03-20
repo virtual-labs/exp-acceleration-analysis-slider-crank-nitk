@@ -310,32 +310,30 @@ $( "#r4spinner" ).on( "change", function() {  varchange() } );
   varupdate();
 }
 
-
-
 function updateR3Limits(r2Value, updateSlider) {
   const maxR3 = 6 * r2Value;
   const minR3 = 2.5 * r2Value;
 
-  $('#r3slider').slider("option", "max", maxR3);
-  $('#r3slider').slider("option", "min", minR3);
-  $('#r3spinner').spinner("option", "max", maxR3);
-  $('#r3spinner').spinner("option", "min", minR3);
+  $("#r3slider").slider("option", "max", maxR3);
+  $("#r3slider").slider("option", "min", minR3);
+  $("#r3spinner").spinner("option", "max", maxR3);
+  $("#r3spinner").spinner("option", "min", minR3);
 
-  const r3Value = $('#r3spinner').spinner("value");
+  const r3Value = $("#r3spinner").spinner("value");
   if (r3Value < minR3) {
-    $('#r3spinner').spinner("value", minR3);
+    $("#r3spinner").spinner("value", minR3);
     if (updateSlider) {
-      $('#r3slider').slider("value", minR3);
+      $("#r3slider").slider("value", minR3);
     }
   } else if (r3Value > maxR3) {
-    $('#r3spinner').spinner("value", maxR3);
+    $("#r3spinner").spinner("value", maxR3);
     if (updateSlider) {
-      $('#r3slider').slider("value", maxR3);
+      $("#r3slider").slider("value", maxR3);
     }
   } else {
-    $('#r3spinner').spinner("value", r3Value);
+    $("#r3spinner").spinner("value", r3Value);
     if (updateSlider) {
-      $('#r3slider').slider("value", r3Value);
+      $("#r3slider").slider("value", r3Value);
     }
   }
 }
@@ -543,7 +541,7 @@ function draw() {
   ctx.save();
   ctx.translate(0.75, 0.75);
   ctx.font = " 16px 'Comic Sans MS'";
-  document.getElementById('titleincanvas').innerHTML="Non Grash of Mechanism";
+  document.getElementById("titleincanvas").innerHTML = "Non Grash of Mechanism";
   if (scaleP >= 1) ctx.fillText("Scale = 1:" + scaleP, 15, 30);
   if (scaleP < 1) ctx.fillText("Scale = " + 1 / scaleP + ":1", 15, 30);
 
@@ -730,43 +728,43 @@ function drawacc(context) {
   document.getElementById("datatable1").innerHTML =
     "\
 <table>\
-<tr><th>Variable</th><th>Value</th></tr>\
+<tr><th>Variable</th><th>Value</th><th class='unit'>(Unit)</th></tr>\
 <tr><td>A<sub>a</sub><sup>t</sup></td><td>" +
     roundd(accta, 2) +
-    "mm/s<sup>2</sup></td></tr>\
+    "</td><td class='unit'>mm/s<sup>2</sup></td></tr>\
 <tr><td>A<sub>a</sub><sup>c</sup></td><td>" +
     roundd(accca, 2) +
-    "mm/s<sup>2</sup></td></tr>\
+    "</td><td class='unit'>mm/s<sup>2</sup></td></tr>\
 <tr><td>A<sub>a</sub></td><td>" +
     roundd(acca, 2) +
-    "mm/s<sup>2</sup></td></tr>\
+    "</td><td class='unit'>mm/s<sup>2</sup></td></tr>\
 <tr><td>A<sub>ba</sub><sup>t</sup></td><td>" +
     roundd(acctba, 2) +
-    "mm/s<sup>2</sup></td></tr>\
+    "</td><td class='unit'>mm/s<sup>2</sup></td></tr>\
 <tr><td>A<sub>ba</sub><sup>c</sup></td><td>" +
     roundd(acccba, 2) +
-    "mm/s<sup>2</sup></td></tr>\
+    "</td><td class='unit'>mm/s<sup>2</sup></td></tr>\
 <tr><td>A<sub>ba</sub></td><td>" +
     roundd(accba, 2) +
-    "mm/s<sup>2</sup></td></tr>\
+    "</td><td class='unit'>mm/s<sup>2</sup></td></tr>\
 <tr><td>A<sub>b</sub></td><td>" +
     roundd(accb, 2) +
-    "mm/s<sup>2</sup></td></tr>\
+    "</td><td class='unit'>mm/s<sup>2</sup></td></tr>\
 <tr><td>&alpha;<sub>BA</sub></td><td>" +
     roundd(alpha3, 2) +
-    "rad/s<sup>2</sup></td></tr>\
+    "</td><td class='unit'>rad/s<sup>2</sup></td></tr>\
 <tr><td>&omega;<sub>3</sub></td><td>" +
     roundd(omega3, 2) +
-    "rad/s<sup>2</sup></td></tr>\
+    "</td><td class='unit'>rad/s<sup>2</sup></td></tr>\
 </table>";
 
-//   document.getElementById("datatable2").innerHTML =
-//     "\
-// <table>\
-// <tr><td>Centripetal Acc</td></tr>\
-// <tr><td>Tangential Acc</td></tr>\
-// <tr><td>Total Acc</td></tr>\
-// </table>";
+  //   document.getElementById("datatable2").innerHTML =
+  //     "\
+  // <table>\
+  // <tr><td>Centripetal Acc</td></tr>\
+  // <tr><td>Tangential Acc</td></tr>\
+  // <tr><td>Total Acc</td></tr>\
+  // </table>";
 
   //Acceleration Diagram
   ao = pointtrans(ao, transA);
@@ -827,7 +825,7 @@ function drawacc(context) {
   context.fillStyle = "#000000";
   // context.fillText("Total Acc", 430, 395);
   pointjoin(aa, acba, context, "#330099", 1);
-  
+
   context.save();
   context.translate(0.5, 0.5);
   context.lineWidth = 1;
