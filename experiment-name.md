@@ -1,0 +1,1 @@
+## Acceleration analysis of Slider crank mechanism

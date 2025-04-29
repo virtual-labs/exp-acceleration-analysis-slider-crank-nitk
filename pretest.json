@@ -1,0 +1,74 @@
+{
+    "version": 2.0,
+    "questions": [
+      {
+        "question": "Which of the following exists for a slider in slider crank mechanism?",
+        "answers": {
+          "a": "tangential acceleration",
+          "b": "linear acceleration",
+          "c": "centripetal acceleration",
+          "d": "None of these"
+        },
+        "explanations": {
+          "a": "",
+          "b": "",
+          "c": "",
+          "d": ""
+        },
+        "correctAnswer": "b",
+        "difficulty": ""
+      },
+      {
+        "question": "What is the centripetal acceleration of a crank rotating with constant angular velocity",
+        "answers": {
+          "a": "r&omega;<sup>2</sup>",
+          "b": "0",
+          "c": "1rad/s<sup>2</sup>",
+          "d": "None of these"
+        },
+        "explanations": {
+          "a": "",
+          "b": "",
+          "c": "",
+          "d": ""
+        },
+        "correctAnswer": "a",
+        "difficulty": ""
+      },
+      {
+        "question": "What is the tangential acceleration of a 1cm crank rotating with constant angular velocity &omega ?",
+        "answers": {
+          "a": "0",
+          "b": "omega;<sup>2</sup>",
+          "c": "1rad/s<sup>2</sup>",
+          "d": "None of these"
+        },
+        "explanations": {
+          "a": "",
+          "b": "",
+          "c": "",
+          "d": ""
+        },
+        "correctAnswer": "a",
+        "difficulty": ""
+      },
+      {
+        "question": "What is the tangential acceleration of a 10cm crank rotating with constant angular acceleration of 2rad/s<sup>2</sup>?",
+        "answers": {
+          "a": "20cm/s<sup>2</sup>",
+          "b": "10cm/s<sup>2</sup>",
+          "c": "5cm/s<sup>2</sup> to the axis of slider",
+          "d": "None of these"
+        },
+        "explanations": {
+          "a": "",
+          "b": "",
+          "c": "",
+          "d": ""
+        },
+        "correctAnswer": "a",
+        "difficulty": ""
+      }
+    ]
+  }
+  
